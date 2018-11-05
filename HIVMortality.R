@@ -1,5 +1,3 @@
-# Make sure you first download and import the dataset. Theres a tab on the right that does it easily.
-
 # Creating dataframe from the data source
 df <- `Compressed.Mortality,.1999.2016`
 # Removing nonessential columns of data.
@@ -69,10 +67,12 @@ NHIVage.grp3<-merged.data[(merged.data$ICD == 0) & (merged.data$Age.Group %in% c
 # install.packages("cowplot")
 library(ggplot2)
 library(cowplot)
+
 # Plotting the age groups for HIV
 HIVdeaths.grp1<-ggplot(data = HIVage.grp1, aes(x = Year, y = Deaths)) + geom_point(colour = "black") + geom_line(aes(color= Age.Group,group = Age.Group)) + labs(col = "Age Group")+ggtitle("Deaths per year by HIV in age groups 2-5")
 HIVdeaths.grp2<-ggplot(data = HIVage.grp2, aes(x = Year, y = Deaths)) + geom_point(colour = "black") + geom_line(aes(color= Age.Group,group = Age.Group)) + labs(col = "Age Group")+ggtitle("Deaths per year by HIV in age groups 6-9")
 HIVdeaths.grp3<-ggplot(data = HIVage.grp3, aes(x = Year, y = Deaths)) + geom_point(colour = "black") + geom_line(aes(color= Age.Group,group = Age.Group)) + labs(col = "Age Group")+ggtitle("Deaths per year by HIV in age groups 10-14")
+
 # Plotting the age groups for non HIV
 NHIVdeaths.grp1<-ggplot(data = NHIVage.grp1, aes(x = Year, y = Deaths)) + geom_point(colour = "black") + geom_line(aes(color= Age.Group,group = Age.Group)) + labs(col = "Age Group")+ggtitle("Deaths per year not by HIV in age groups 2-5")
 NHIVdeaths.grp2<-ggplot(data = NHIVage.grp2, aes(x = Year, y = Deaths)) + geom_point(colour = "black") + geom_line(aes(color= Age.Group,group = Age.Group)) + labs(col = "Age Group")+ggtitle("Deaths per year not by HIV in age groups 6-9")
