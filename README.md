@@ -1,2 +1,2 @@
 # HIV-Mortality
-A look into HIV mortality rate among different ages.
+A look into HIV mortality rate among different ages using R.
